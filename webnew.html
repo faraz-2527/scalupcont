@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scaleup Connect - HR Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --navy: #002147;
+      --teal: #008080;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Lato', 'Open Sans', 'Roboto', sans-serif; color: var(--navy); line-height: 1.6; }
+    
+    /* Header */
+    header {
+      background: var(--white);
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    header img { height: 50px; }
+    nav ul { list-style: none; display: flex; gap: 25px; }
+    nav a { text-decoration: none; color: var(--navy); font-weight: 600; transition: color 0.3s; }
+    nav a:hover { color: var(--teal); }
+    .cta-btn {
+      background: var(--teal);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .cta-btn:hover { background: #006666; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.8)), url('https://d.newsweek.com/en/full/2138885/business-people-working-together.webp?w=737&f=b0bd838c5918f36be28e4f44268fb74a') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 25px; }
+
+    /* Sections */
+    section { padding: 80px 50px; }
+    section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: var(--teal); }
+    .about p { max-width: 900px; margin: 10px auto; text-align: center; }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .service-box {
+      padding: 25px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #f9f9f9;
+      transition: transform 0.3s;
+    }
+    .service-box:hover { transform: translateY(-5px); }
+    .service-box i { font-size: 40px; color: var(--teal); margin-bottom: 15px; }
+
+    /* Dual Column */
+    .dual-column {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+    .dual-column div {
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    /* Contact */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background: var(--teal);
+      color: var(--white);
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-form button:hover { background: #006666; }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+    }
+    .social-icons a {
+      color: var(--white);
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover { color: var(--teal); }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      header { flex-direction: column; gap: 10px; padding: 15px; }
+      nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    }
+  </style>
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/923353808151" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+        alt="WhatsApp" 
+        class="whatsapp-icon">
+</a>
+
+<style>
+/* WhatsApp Floating Button Style */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px #999;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 50%;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+</style>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="WhatsApp Image 2025-08-19 at 9.13.57 PM.jpeg" alt="Scaleup Connect Logo">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-btn">Contact Us</a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <h1>Empowering Careers, Enabling Growth</h1>
+    <p>Your trusted partner in global HR solutions, bridging businesses and talent worldwide.</p>
+    <a href="#contact" class="cta-btn">Contact Us</a>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <h2>Who We Are</h2>
+    <p>Scaleup Connect is a HR agency dedicated to unlocking potential—connecting businesses with the right people and empowering individuals to build sustainable careers.</p>
+    <h3 style="color:var(--navy); margin-top:30px;">Vision</h3>
+    <p>To become a leader in shaping the future of human capital by connecting talent with opportunity, empowering individuals to thrive, and enabling businesses to scale with the right people at the right time.</p>
+    <h3 style="color:var(--navy); margin-top:30px;">Mission</h3>
+    <p>Our mission is to bridge careers and organizations through innovative HR solutions that drive growth, inclusivity, and sustainability. We empower professionals with the skills and opportunities they need, while supporting organizations in building agile, future-ready workforces.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <i class="fas fa-user-tie"></i>
+        <h3>Recruitment</h3>
+        <p>Finding top talent to drive business success.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Training & Development</h3>
+        <p>Building skills for the workforce of tomorrow.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-briefcase"></i>
+        <h3>HR Consultancy</h3>
+        <p>Strategic solutions to optimize people management.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-user-graduate"></i>
+        <h3>Career Coaching</h3>
+        <p>Empowering individuals to achieve career goals.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-globe"></i>
+        <h3>Global Talent Solutions</h3>
+        <p>International HR support for scaling businesses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Business & Talent -->
+  <section>
+    <h2>Who We Serve</h2>
+    <div class="dual-column">
+      <div>
+        <h3>For Businesses</h3>
+        <p>Partner with us to access skilled professionals, HR strategies, and global workforce solutions.</p>
+      </div>
+      <div>
+        <h3>For Talent</h3>
+        <p>Unlock career opportunities, skill development, and coaching tailored to your growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:20px; text-align:center;">
+        <strong>Email:</strong> info@scaleupconnect.com<br>
+        <strong>Phone:</strong> +92 335 3808151
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Scaleup Connect. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61579688127730" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/company/scaleup-connect/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/scaleupconnect/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
